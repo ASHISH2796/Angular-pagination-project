@@ -1,0 +1,5 @@
+<p>
+  parent works!
+</p>
+
+<app-child [workflow]='workflow' [pager]='pager' [pagedItems]='pagedItems' *ngIf='isLoading' (pageNoEvent)='getNextData($event)'></app-child>

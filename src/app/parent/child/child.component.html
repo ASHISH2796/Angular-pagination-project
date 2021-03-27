@@ -1,0 +1,32 @@
+<div>
+  <div class="container">
+    <div class="text-center">
+      <h1>Pagination </h1>
+
+      <!-- items being paged -->
+      <div *ngFor="let item of pagedItems">{{item.name}}</div>
+
+      <!-- pager -->
+       <!-- <ul *ngIf="pager.pages && pager.pages.length" >
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+      </ul> -->
+
+      <div id="myDIV" *ngIf="pager.pages && pager.pages.length">
+        <button [ngClass]="{disabled:pager.currentPage === 1}" (click)="addNewItem(pager.currentPage - 1)" class="btn">Previous</button>
+         <button class="btn" *ngFor="let page of pager.pages" [ngClass]="{currentPage:pager.currentPage === page}" (click)="addNewItem(page)">{{page}}</button>
+        <button class="btn" [ngClass]="{disabled:pager.currentPage === pager.totalPages}" (click)="addNewItem(pager.currentPage + 1)">Next</button>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
